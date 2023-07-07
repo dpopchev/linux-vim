@@ -1,6 +1,6 @@
 # linux-vim
 
-Configuration to distribute for vim-family editors.
+Configuration to distribute for `vim/neovim`.
 
 ## Quickstart
 
