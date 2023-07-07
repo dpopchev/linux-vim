@@ -44,13 +44,13 @@ endef
 stamp_dir := .stamps
 src_dir := src
 
-configs :=
+configs := vimrc
 config_dsts := $(addprefix ${HOME}/.,$(configs))
 config_stamps := $(addprefix $(stamp_dir)/,$(addsuffix .stamp,$(configs)))
 
-configs +=
-config_dsts += ${HOME}/.config/
-config_stamps += $(stamp_dir)/
+configs += nvim
+config_dsts += ${HOME}/.config/nvim
+config_stamps += $(stamp_dir)/nvim.stamp
 
 $(stamp_dir):
 	@$(call add_gitignore,$@)
