@@ -7,6 +7,7 @@ endif
 if !(exists('g:did_load_filetypes') && exists('g:did_load_ftplugin') && exists('g:did_indent_on'))
     filetype plugin indent on
 endif
+
 if has('syntax') && !exists('g:syntax_on')
     syntax enable
 endif
@@ -15,6 +16,7 @@ endif
 if has('termguicolors')
     set termguicolors
 endif
+
 set background=dark
 
 " Allow color schemes to do bright colors without forcing bold.
@@ -31,8 +33,19 @@ let mapleader="\<space>"
 nnoremap <leader>ev :Ex<cr>
 
 " ==> easy quit/write
-nnoremap <leader>q :q<cr>
-nnoremap <leader>Q :q!<cr>
+" Close the current buffer, quit vim if it's the last buffer
+" Pass argument '!" to do so without asking to save
+function! CloseBufferOrVim(force='')
+    if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+        exec ("quit" . a:force)
+        quit
+    else
+        exec ("bdelete" . a:force)
+    endif
+endfunction
+
+nnoremap <leader>q :call CloseBufferOrVim()<CR>
+nnoremap <leader>Q :call CloseBufferOrVim('!')<CR>
 nnoremap <leader>w :w<cr>
 
 " ==> easy insert/append
@@ -69,7 +82,11 @@ let &textwidth = textThreshold
 let &colorcolumn = textThreshold
 
 " ==> access system clipboard
+if has("unnamedplus")
 set clipboard=unnamedplus
+else
+    set clipboard=unnamed
+endif
 
 " ==> format options, see :h fo-table
 autocmd! FileType,BufWinEnter * setlocal fo-=o fo+=r fo+=b fo+=1 fo+=p
@@ -104,7 +121,8 @@ set showmatch
 " set matchpairs+=<:>
 
 " ==> enable mouse only in normal mode
-set mouse=
+set mouse-=a
+"set ttymouse= " breaks auto resize when terminal size changes
 
 " ==> remap esc key
 inoremap kj <esc>l
@@ -205,6 +223,8 @@ set spell
 set spelllang=en
 " set spelllang+=bg  " spellcheck language
 
+autocmd! FileType i3config :set nospell
+
 " ==> indentation without hard tabs
 " resource https://vim.fandom.com/wiki/Indenting_source_code
 let b:indent=4
@@ -266,7 +286,6 @@ if has('nvim')
     augroup END
 endif
 
-autocmd! FileType i3config :set nospell
 
 " ==> auxiliary files
 let auxDump=[ $HOME."/.vim/tmp/", $HOME."/.tmp/", $HOME."/tmp/", "/tmp/" ]
@@ -293,7 +312,7 @@ if &diff
 endif
 
 " ==> paste over visual selection without yanking it back
-vnoremap p "_dP
+" vnoremap p "_dP
 
 " ==> open help files in vertical split
 autocmd! FileType help wincmd L
