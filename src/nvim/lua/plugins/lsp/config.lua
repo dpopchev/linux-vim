@@ -84,7 +84,7 @@ local LSP_ATTACH_AU = {
 }
 
 function M.make_lspconfig()
-    vim.lsp.set_log_level('info')
+    vim.lsp.set_log_level('warn')
     set_diagnostic_sings()
     vim.diagnostic.config(VIM_DIAGNOSTIC_CONFIG)
     vim.api.nvim_create_autocmd('LspAttach', LSP_ATTACH_AU)

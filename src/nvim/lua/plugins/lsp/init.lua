@@ -2,6 +2,16 @@ local MASON = {
     "williamboman/mason.nvim",
 }
 
+local function set_python3_host_prog()
+    local python = '.venv/bin/python'
+    local is_present = os.execute('test -e ' .. python)
+    if (is_present == 0) then
+        vim.g.python3_host_prog = python
+    else
+        vim.g.python3_host_prog = 'python3'
+    end
+end
+
 local LANGUAGE_SERVERS = {'lua_ls', 'jedi_language_server'}
 
 local function setup()
@@ -10,6 +20,8 @@ local function setup()
 
     local lspconfig = require('lspconfig')
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+    set_python3_host_prog()
 
     for _, server in ipairs(LANGUAGE_SERVERS) do
         require('plugins.lsp.'..server).setup(lspconfig, capabilities)
