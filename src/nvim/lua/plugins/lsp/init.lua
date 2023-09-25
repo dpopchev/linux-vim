@@ -12,7 +12,8 @@ local function set_python3_host_prog()
     end
 end
 
-local LANGUAGE_SERVERS = {'lua_ls', 'jedi_language_server'}
+-- local LANGUAGE_SERVERS = {'lua_ls', 'jedi_language_server'}
+local LANGUAGE_SERVERS = {'lua_ls', 'pyright'}
 
 local function setup()
     require("mason").setup()
