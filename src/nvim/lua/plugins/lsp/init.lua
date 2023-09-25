@@ -14,6 +14,7 @@ end
 
 -- local LANGUAGE_SERVERS = {'lua_ls', 'jedi_language_server'}
 local LANGUAGE_SERVERS = {'lua_ls', 'pyright'}
+-- local LANGUAGE_SERVERS = {'lua_ls', 'pylsp'}
 
 local function setup()
     require("mason").setup()
