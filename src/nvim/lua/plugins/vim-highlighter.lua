@@ -31,3 +31,7 @@ map('n', 'g<cr>', '<cmd>Hi<<cr>')
 -- " hi HiColor21 ctermfg=52  ctermbg=181 guifg=#8f5f5f guibg=#d7cfbf cterm=bold gui=bold
 -- " hi HiColor22 ctermfg=254 ctermbg=246 guifg=#e7efef guibg=#979797 cterm=bold gui=bold
 -- " hi HiColor30 ctermfg=none cterm=bold guifg=none gui=bold
+
+return {
+    'azabiong/vim-highlighter',
+}

@@ -1,5 +1,3 @@
-local gitsigns = require('gitsigns')
-
 local signcolumn = false
 local numhl = true
 
@@ -42,8 +40,12 @@ local function on_attach(bufnr)
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
 end
 
-gitsigns.setup({
-    signcolumn = signcolumn,
-    numhl = numhl,
-    on_attach = on_attach
-})
+return {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+        signcolumn = signcolumn,
+        numhl = numhl,
+        on_attach = on_attach
+    },
+    event = 'VeryLazy'
+}
