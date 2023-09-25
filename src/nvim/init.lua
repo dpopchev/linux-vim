@@ -1,28 +1,6 @@
 vim.cmd('source ~/.vimrc')
 require("lazy-setup")
 --     use {
---         'haringsrob/nvim_context_vt',
---         'nvim-treesitter/nvim-treesitter-context',
---         -- 'nvim-treesitter/nvim-treesitter-textobjects',
---         requires = {
---             "nvim-treesitter/nvim-treesitter",
---             run = ":TSUpdate",
---         },
---     }
---     use {
---         "williamboman/mason.nvim",
---         "williamboman/mason-lspconfig.nvim",
---         "neovim/nvim-lspconfig",
---     }
---     use {
---         'hrsh7th/nvim-cmp',
---         'hrsh7th/cmp-nvim-lsp',
---         'L3MON4D3/LuaSnip',
---         'saadparwaiz1/cmp_luasnip',
---         "rafamadriz/friendly-snippets",
---         "lukas-reineke/cmp-under-comparator"
---     }
---     use {
 --         "nvim-neotest/neotest",
 --         requires = {
 --             "nvim-lua/plenary.nvim",
