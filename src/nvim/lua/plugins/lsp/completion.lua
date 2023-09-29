@@ -41,8 +41,8 @@ function M.make_cmpconfig()
         -- toggle completion
         ['<C-e>'] = cmp.mapping.close(),
         -- confirm selection
-        ['<C-y>'] = cmp.mapping.confirm(select_insert),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-y>'] = cmp.mapping.confirm(select_replace),
+        ['<C-o>'] = cmp.mapping.complete(),
         -- navigate items on the list
         ['<C-p>'] = cmp.mapping.select_prev_item(select_replace),
         ['<C-n>'] = cmp.mapping.select_next_item(select_replace),
