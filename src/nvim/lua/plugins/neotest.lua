@@ -26,8 +26,8 @@ local NEOTEST_MAPPINGS = {
     keymap('<leader>nN', function() vim.cmd('lua require("neotest").run.run(vim.fn.expand("%"))') end, 'Neotest run test file'),
     keymap('<leader>nc', function() vim.cmd('lua require("neotest").run.stop()') end,'Neotest cancel running test'),
     keymap('<leader>na', function() vim.cmd('lua require("neotest").run.attach()') end,'Neotest attach running test'),
-    keymap('<leader>no', function() vim.cmd('lua require("neotest").output.open({enter=true, auto_close=true})') end, 'Neotest output open'),
-    keymap('<leader>nO', function() vim.cmd('lua require("neotest").output_panel.toggle()') end, 'Neotest otuput panel toggle'),
+    -- keymap('<leader>no', function() vim.cmd('lua require("neotest").output.open({enter=true, auto_close=true})') end, 'Neotest output open'),
+    keymap('<leader>no', function() vim.cmd('lua require("neotest").output_panel.toggle()') end, 'Neotest otuput panel toggle'),
     keymap('[n', function() vim.cmd('lua require("neotest").jump.prev({ status = "failed" })') end, 'Neotest jump to prev failed test'),
     keymap(']n', function() vim.cmd('lua require("neotest").jump.next({ status = "failed" })') end, 'Neotest jump to next failed test'),
 }
