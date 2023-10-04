@@ -1,21 +1,7 @@
 local TREESITTER_CONFIGS = {
     highlight = { enable = true },
     indent = { enable = true },
-    ensure_installed = {
-        -- commenting out as auto_install does not stop it for checking
-        -- "bash",
-        -- "json",
-        -- "lua",
-        -- "luadoc",
-        -- "markdown",
-        -- "markdown_inline",
-        -- "python",
-        -- "query",
-        -- "regex",
-        -- "vim",
-        -- "vimdoc",
-        -- "yaml",
-    },
+    ensure_installed = { },
     incremental_selection = {
         enable = true,
         keymaps = {
