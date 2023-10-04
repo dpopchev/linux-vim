@@ -39,7 +39,7 @@ local TREESITTER = {
 }
 
 local TREESITTER_CONTEXT_VT_CONFIG = {
-    disable_virtual_lines = true,
+    disable_virtual_lines = false,
     min_rows = 10,
 }
 
