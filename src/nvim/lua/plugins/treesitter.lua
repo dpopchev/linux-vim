@@ -38,7 +38,12 @@ local TREESITTER = {
     config = make_treesitter_config
 }
 
+local TREESITTER_CONTEXT_VT_CONFIG = {
+    disable_virtual_lines = true,
+    min_rows = 10,
+}
+
 return {
-    {'haringsrob/nvim_context_vt', dependencies = {TREESITTER} },
+    {'haringsrob/nvim_context_vt', dependencies = {TREESITTER}, config = TREESITTER_CONTEXT_VT_CONFIG },
     {'nvim-treesitter/nvim-treesitter-context', dependencies = {TREESITTER} },
 }
