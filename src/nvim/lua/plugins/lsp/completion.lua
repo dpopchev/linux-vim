@@ -31,8 +31,8 @@ function M.make_cmpconfig()
     vim.opt.shortmess = vim.opt.shortmess + { c = true}
 
     local cmp = require('cmp')
-    local select_replace = { behavior = cmp.SelectBehavior.Replace, select = true }
-    local select_insert = { behavior = cmp.ConfirmBehavior.Insert, select = true }
+    local select_behavior = { behavior = cmp.SelectBehavior.Replace, select = true }
+    local confirm_behavior = { behavior = cmp.ConfirmBehavior.Replace, select = true }
 
     local mapping = {
         -- scroll up and down in the completion documentation
@@ -41,11 +41,11 @@ function M.make_cmpconfig()
         -- toggle completion
         ['<C-e>'] = cmp.mapping.close(),
         -- confirm selection
-        ['<C-y>'] = cmp.mapping.confirm(select_replace),
+        ['<C-y>'] = cmp.mapping.confirm(confirm_behavior),
         ['<C-o>'] = cmp.mapping.complete(),
         -- navigate items on the list
-        ['<C-p>'] = cmp.mapping.select_prev_item(select_replace),
-        ['<C-n>'] = cmp.mapping.select_next_item(select_replace),
+        ['<C-p>'] = cmp.mapping.select_prev_item(select_behavior),
+        ['<C-n>'] = cmp.mapping.select_next_item(select_behavior),
     }
 
     local window = {
