@@ -4,7 +4,6 @@ local TREESITTER_CONFIGS = {
     ensure_installed = {
         'bash', 'c', 'json', 'lua', 'make',
         'markdown_inline', 'perl', 'python', 'vimdoc',
-        'gitcommit'
     },
     incremental_selection = {
         enable = true,
