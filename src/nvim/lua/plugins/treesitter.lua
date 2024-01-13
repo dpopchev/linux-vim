@@ -1,7 +1,11 @@
 local TREESITTER_CONFIGS = {
     highlight = { enable = true },
     indent = { enable = true },
-    ensure_installed = { },
+    ensure_installed = {
+        'bash', 'c', 'json', 'lua', 'make',
+        'markdown_inline', 'perl', 'python', 'vimdoc',
+        'gitcommit'
+    },
     incremental_selection = {
         enable = true,
         keymaps = {
