@@ -3,8 +3,11 @@ local TREESITTER_CONFIGS = {
     indent = { enable = true },
     ensure_installed = {
         'bash', 'c', 'json', 'lua', 'make',
-        'markdown_inline', 'perl', 'python', 'vimdoc',
+        'perl', 'python', 'vimdoc',
+        'diff', 'markdown', 'markdown_inline', 'yaml'
     },
+    auto_install = false,
+    sync_install = false,
     incremental_selection = {
         enable = true,
         keymaps = {
@@ -14,8 +17,6 @@ local TREESITTER_CONFIGS = {
             scope_incremental = false,
         },
     },
-    auto_install = false,
-    sync_install = false,
 }
 
 local function make_treesitter_config()
