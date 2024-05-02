@@ -336,3 +336,6 @@ if 0 && has_key(environ(), 'TMUX')
         autocmd! VimLeave,VimSuspend * call jobstart('tmux set status on', {'detach': 1})
     augroup END
 endif
+
+nnoremap gso o# %%<esc>o<esc>
+nnoremap gsO O# %%<esc>o<esc>
